@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  min-height: 100vh;
+  background: linear-gradient(#D5A3FF 0%, #77A5F8 100%);
+}
+.card-row{
+  width:100%;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 20px;
+}
+.wrapper{
+width: 400px;
+min-height:500px ;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.wrapper header{
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  position: relative;
+}
+header label{
+  height: 100%;
+  z-index: 2;
+  width: 30%;
+  display: flex;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+header .slider{
+  position: absolute;
+  height: 85%;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+  transition: all 0.35s ease;
+}
+
+.wrapper input[type="radio"]{
+  display: none;
+}
+.image-box {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  
+}
+.image-box  img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+}
+
+/* Slider Animation */
+#tab1-1:checked ~ header .slider,
+#tab2-1:checked ~ header .slider,
+#tab3-1:checked ~ header .slider,
+#tab4-1:checked ~ header .slider,
+#tab5-1:checked ~ header .slider,
+#tab6-1:checked ~ header .slider{
+  left: 0%;
+  width: 33%;
+
+}
+
+#tab1-2:checked ~ header .slider,
+#tab2-2:checked ~ header .slider,
+#tab3-2:checked ~ header .slider,
+#tab4-2:checked ~ header .slider,
+#tab5-2:checked ~ header .slider,
+#tab6-2:checked ~ header .slider{
+  left: 29%;
+  width: 33%;
+
+}
+
+#tab1-3:checked ~ header .slider,
+#tab2-3:checked ~ header .slider,
+#tab3-3:checked ~ header .slider,
+#tab4-3:checked ~ header .slider,
+#tab5-3:checked ~ header .slider,
+#tab6-3:checked ~ header .slider{
+  left: 60%;
+  width: 33%;
+ 
+}
+
+.card-area{
+  overflow: hidden;
+  margin-top: 20px;
+}
+.card-area .cards{
+  display: flex;
+  width: 300%;
+  transition: all 0.5s ease;
+}
+
+/* Slide the cards */
+#tab1-1:checked ~ .card-area .cards,
+#tab2-1:checked ~ .card-area .cards,
+#tab3-1:checked ~ .card-area .cards,
+#tab4-1:checked ~ .card-area .cards,
+#tab5-1:checked ~ .card-area .cards,
+#tab6-1:checked ~ .card-area .cards{
+   margin-left: 0%;
+}
+#tab1-2:checked ~ .card-area .cards,
+#tab2-2:checked ~ .card-area .cards,
+#tab3-2:checked ~ .card-area .cards,
+#tab4-2:checked ~ .card-area .cards,
+#tab5-2:checked ~ .card-area .cards,
+#tab6-2:checked ~ .card-area .cards{
+  margin-left: -95.3%;
+}
+#tab1-3:checked ~ .card-area .cards,
+#tab2-3:checked ~ .card-area .cards,
+#tab3-3:checked ~ .card-area .cards,
+#tab4-3:checked ~ .card-area .cards,
+#tab5-3:checked ~ .card-area .cards,
+#tab6-3:checked ~ .card-area .cards{
+   margin-left: -199.6%;
+}
+
+.row{
+  width: 33.3%;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: 0.5s ease;
+}
+
+/* Animated card visibility */
+#tab1-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab1-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab1-3:checked ~ .card-area .cards .row:nth-child(3),
+#tab2-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab2-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab2-3:checked ~ .card-area .cards .row:nth-child(3),
+#tab3-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab3-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab3-3:checked ~ .card-area .cards .row:nth-child(3),
+#tab4-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab4-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab4-3:checked ~ .card-area .cards .row:nth-child(3),
+#tab5-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab5-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab5-3:checked ~ .card-area .cards .row:nth-child(3),
+#tab6-1:checked ~ .card-area .cards .row:nth-child(1),
+#tab6-2:checked ~ .card-area .cards .row:nth-child(2),
+#tab6-3:checked ~ .card-area .cards .row:nth-child(3){
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.water-details{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.water{
+  font-size: 40px;
+  font-weight: bold;
+
+}
+.right{
+
+    width: 100%;
+    height: 290px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.right iframe {
+width: 100%;
+height:100%;
+border: 0;
+}
+
+
+
+.wrapper button{
+  width: 100%;
+  border-radius: 25px;
+  height: 50px;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  background: linear-gradient(145deg, #D5A3FF 0%, #77A5F8 100%);
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.wrapper button:hover{
+  transform: scale(0.95);
+}
+
+
+/* ================================
+   RESPONSIVE CSS ONLY
+   ================================ */
+
+/* Tablet */
+@media (max-width: 1100px) {
+
+  .card-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  body {
+    padding: 30px;
+  }
+}
+
+
+/* Small Tablet / Large Mobile */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .card-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 10px;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 400px;
+    min-height: 500px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 500px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .card-row {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 5px;
+  }
+
+  .wrapper {
+    width: 100%;
+    min-height: 500px;
+    padding: 20px;
+  }
+
+  .wrapper header {
+    height: 50px;
+  }
+
+  header label {
+    font-size: 15px;
+  }
+
+  .image-box {
+    height: 230px;
+  }
+
+  .right {
+    height: 230px;
+  }
+
+  .water {
+    font-size: 32px;
+  }
+
+  .wrapper button {
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+
+/* Small Mobile */
+@media (max-width: 360px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .wrapper {
+    padding: 15px;
+  }
+
+  header label {
+    font-size: 13px;
+  }
+
+  .image-box {
+    height: 200px;
+  }
+
+  .right {
+    height: 200px;
+  }
+
+  .water {
+    font-size: 28px;
+  }
+}
+
